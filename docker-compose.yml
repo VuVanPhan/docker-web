@@ -1,0 +1,68 @@
+version: '3'
+services:
+  apache:
+    #image: tutum/apache-php
+#    image: 'bitnami/apache:latest'
+#    build: './apache/'
+    container_name: apache
+    build: 
+      context: './apache'
+#      dockerfile: Dockerfile-ubuntu
+      dockerfile: Dockerfile-httpd
+      args:
+        buildno: 1
+    ports:
+      - '8080:80'
+ #     - '80:8081'
+#      - '443:443'
+    volumes:
+      - './public_html:/var/www/html'
+      # image: 'bitnami/apache:latest'
+   # environment:
+   #   - APACHE_HTTP_PORT_NUMBER=8081
+    # depends_on:
+    #   - mariadb
+  php:
+    container_name: php
+    # build:
+    #   context: './php'
+    #   dockerfile: Dockerfile
+    #   args:
+    #     buildno: 1
+    image: vuvanphan/phpfpm:7.1.25-fpm-jessie
+    volumes:
+      - './public_html:/var/www/html'
+  #   environment:
+  #     - APACHE_HTTP_PORT_NUMBER=8081
+#   mariadb:
+#     image: 'bitnami/mariadb:10.3'
+#     container_name: mariadb
+#     environment:
+#       - MARIADB_ROOT_PASSWORD=mypass123
+#     volumes:
+#       - 'mariadb_data:/bitnami'
+#   phpmyadmin:
+#     image: 'bitnami/phpmyadmin:5'
+#     container_name: phpmyadmin
+#     ports:
+#       - '8080:80'
+#     depends_on:
+#       - mariadb
+#     volumes:
+#       - 'phpmyadmin_data:/bitnami'
+# volumes:
+#   mariadb_data:
+#     driver: local
+#   phpmyadmin_data:
+#     driver: local
+
+# link web http://localhost
+
+# link browser phpmyadmin http://localhost:8080
+# user : root
+# pass : mypass123
+
+## connect mariadb with docker 
+# docker exec -it docker-sql_mariadb_1 bash
+# mysql -uroot -p
+# enter pass : mypass123
