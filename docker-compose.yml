@@ -12,49 +12,55 @@ services:
       args:
         buildno: 1
     ports:
-      - '8080:80'
- #     - '80:8081'
+      - '80:80'
+      # - '80:80'
 #      - '443:443'
     volumes:
       - './public_html:/var/www/html'
       # image: 'bitnami/apache:latest'
    # environment:
    #   - APACHE_HTTP_PORT_NUMBER=8081
-    # depends_on:
-    #   - mariadb
+    depends_on:
+      - php
+      - mariadb
   php:
     container_name: php
-    # build:
-    #   context: './php'
-    #   dockerfile: Dockerfile
-    #   args:
-    #     buildno: 1
-    image: vuvanphan/phpfpm:7.1.25-fpm-jessie
+#    build: './apache/'
+    build:
+      context: './php'
+      dockerfile: Dockerfile
+      args:
+        buildno: 1
+    # image: vuvanphan/phpfpm:7.1.25-fpm-jessie
     volumes:
       - './public_html:/var/www/html'
-  #   environment:
-  #     - APACHE_HTTP_PORT_NUMBER=8081
-#   mariadb:
-#     image: 'bitnami/mariadb:10.3'
-#     container_name: mariadb
-#     environment:
-#       - MARIADB_ROOT_PASSWORD=mypass123
-#     volumes:
-#       - 'mariadb_data:/bitnami'
-#   phpmyadmin:
-#     image: 'bitnami/phpmyadmin:5'
-#     container_name: phpmyadmin
-#     ports:
-#       - '8080:80'
-#     depends_on:
-#       - mariadb
-#     volumes:
-#       - 'phpmyadmin_data:/bitnami'
-# volumes:
-#   mariadb_data:
-#     driver: local
-#   phpmyadmin_data:
-#     driver: local
+  mariadb:
+    image: 'bitnami/mariadb:10.3'
+    container_name: mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=mypass123
+      - MARIADB_USER=user1
+      - MARIADB_PASSWORD=mypassuser123
+      - MARIADB_DATABASE=mykinhdoanh
+    volumes:
+      - 'mariadb_data:/bitnami'
+    # ports:
+    #   - 3306:80
+  phpmyadmin:
+    image: 'bitnami/phpmyadmin:5'
+    container_name: phpmyadmin
+    ports:
+      - 8080:80
+      # - '3306:80'
+    depends_on:
+      - mariadb
+    volumes:
+      - 'phpmyadmin_data:/bitnami'
+volumes:
+  mariadb_data:
+    driver: local
+  phpmyadmin_data:
+    driver: local
 
 # link web http://localhost
 
