@@ -20,4 +20,5 @@ https://docs.docker.com/engine/userguide/networking/dockernetworks/
 ## Alternatively you can grab the IP of all running containers via:
 docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
 
-## 
+## Add line to vitual.apache.conf : enable rewrite apache
+LoadModule rewrite_module modules/mod_rewrite.so

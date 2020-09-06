@@ -5,6 +5,7 @@ services:
 #    image: 'bitnami/apache:latest'
 #    build: './apache/'
     container_name: apache
+    restart: 'always'
     build: 
       context: './apache'
 #      dockerfile: Dockerfile-ubuntu
@@ -37,6 +38,7 @@ services:
   mariadb:
     image: 'bitnami/mariadb:10.3'
     container_name: mariadb
+    restart: 'always'
     environment:
       - MARIADB_ROOT_PASSWORD=mypass123
       - MARIADB_USER=user1

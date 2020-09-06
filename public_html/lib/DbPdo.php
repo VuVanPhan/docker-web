@@ -29,8 +29,7 @@
                     	user_id INT(11) PRIMARY KEY,
                         user_name varchar(300) NOT NULL,
                         dt_create date
-                    	)',
-		            	'SELECT * FROM projects a'];
+                    	)'];
 	            foreach ($sqls as $sql) {
 	            	$conn->exec($sql);
 	            }

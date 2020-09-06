@@ -1,0 +1,18 @@
+<Files .htaccess>
+	Order Allow,Deny
+	Deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+   Options +FollowSymLinks
+   RewriteEngine On
+
+	ErrorDocument 404 /404.html
+
+   # Send request via index.php
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-l
+
+   RewriteRule ^(.*)$ index.php/url=$1 [QSA,L]
+</IfModule>
