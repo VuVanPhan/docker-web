@@ -2,10 +2,10 @@
 	/**
 	 * 
 	 */
-	require_once (__DIR__.'/defineRoot.php');
-	require_once (__DIR__.'/Config.php');
+	//require_once (__DIR__.'/defineRoot.php');
+	//require_once (__DIR__.'/Config.php');
 
-	class ConnectDb extends Config
+	class ConnectDb //extends Config
 	{
 		private $conn;
 
@@ -18,10 +18,10 @@
 
 		public function OpenConnect() {
 			try {
-				// die('fffff');
+				die('ffff656565f');
 			   // $this->conn = new PDO('"mysql:host="'.$this->getDbHost().'";dbname="'.$this->getDbName().'"', $this->getDbUser(), $this->getDbPass());
 				// $conn = new PDO('"mysql:host="'.$this->getDbHost().'";dbname="'.$this->getDbName().'"', $this->getDbUser(), $this->getDbPass());
-				$conn = new PDO("mysql:host=mariadb;dbname=mykinhdoanh", "root", "mypass123");
+				$conn = new PDO("mysql:host=mariadb;dbname=mykinhdoanh;charset=utf8md4", "root", "mypass123");
 			   // set the PDO error mode to exception
 			   // $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trang Quản trị Tài chính</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="<?php echo SKIN_URL.'css/bootstrap.min.css'?>" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="<?php echo SKIN_URL.'css/frontend/styles.css'?>" crossorigin="anonymous">
+	<script type="text/javascript" src="<?php echo JS_URL.'jquery-3.5.1.min.js'?>"></script>
+	<script type="text/javascript" src="<?php echo JS_URL.'bootstrap.min.js'?>"></script>
+</head>
+<body>
+	<div id="wrap-container" class="wrap-container wrap-login-admin">
+		<div class="container-fluid">
+			<div class="row">
+				<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+					<div class="position-sticky pt-3">
+						<ul class="nav flex-column">
+							<!-- <li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+									Dashboard
+								</a>
+							</li> -->
+							<li class="nav-item">
+								<a class="nav-link" href="<?php echo ADMIN_HOME_URL . "post" ?>">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+									Posts
+								</a>
+							</li>
+							<!-- <li class="nav-item">
+								<a class="nav-link" href="<?php echo ADMIN_HOME_URL . "product" ?>">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+									Products
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+									Customers
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+									Reports
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+									Integrations
+								</a>
+							</li>
+						</ul>
+
+						<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+							<span>Saved reports</span>
+							<a class="link-secondary" href="#" aria-label="Add a new report">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+							</a>
+						</h6>
+						<ul class="nav flex-column mb-2">
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+									Current month
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+									Last quarter
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+									Social engagement
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+									Year-end sale
+								</a>
+							</li> -->
+						</ul>
+					</div>
+				</nav>
+				<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+					<form class="form-addproduct" method="post" action="<?php echo ADMIN_HOME_URL . "post/save" ?>" enctype="multipart/form-data">
+						<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+							<h1 class="h2">Add Post</h1>
+							<div class="btn-toolbar mb-2">
+								<div class="btn-groups me-2">
+									<button type="button" class="btn btn-dark btn-post-back" id="btn-post-back">Back</button>
+									<button type="reset" class="btn btn-success btn-post-reset" id="btn-post-reset">Reset</button>
+									<button type="button" class="btn btn-warning btn-post-preview" id="btn-post-preview">Preview</button>
+									<button type="submit" class="btn btn-primary btn-post-save" id="btn-post-save" >Save</button>
+									<button type="submit" class="btn btn-primary btn-post-saveandedit" id="btn-post-saveandedit" >Save and Edit</button>
+									<button type="submit" class="btn btn-info btn-post-saveandpreview" id="btn-post-saveandpreview" >Save and Preview</button>
+								</div>
+							<!-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+								This week
+							</button> -->
+							</div>
+						</div>
+						<div class="form-group">
+							<?php if ( isset($data->id) && !is_null($data->id) && !empty($data->id) ) { ?>
+								<input type="hidden" class="form-control" name="post-id" value="<?php echo $data->id ?>">
+							<?php } ?>
+							<div class="form-group row">
+								<label for="postname" class="col-sm-2 col-form-label">Name</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="postname" name="post-name" <?php echo ( ( isset($data->id) && !is_null($data->id) && !empty($data->id) ) ? 'value="'. $data->name .'"' : 'placeholder="Name"') ?>>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="postlink" class="col-sm-2 col-form-label">Link</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="postlink" name="post-link" <?php echo ( ( isset($data->id) && !is_null($data->id) && !empty($data->id) ) ? 'value="'. $data->link .'"' : 'placeholder="Link"') ?>>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="postimage" class="col-sm-2 col-form-label">Image</label>
+								<div class="col-sm-10">
+									<?php if ( isset($data->id) && !is_null($data->id) && !empty($data->id) ) { ?>
+										<input type="text" class="form-control" id="postimagetext" name="post-image" <?php echo ( ( isset($data->id) && !is_null($data->id) && !empty($data->id) ) ? 'value="'. $data->image .'"' : '') ?>>
+									<?php } ?>
+									<input type="file" class="form-control-file" id="postimage" name="post-image" <?php echo ( ( isset($data->id) && !is_null($data->id) && !empty($data->id) ) ? 'value="'. $data->image .'"' : 'placeholder="Image"') ?>>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-2">Active</div>
+								<div class="col-sm-10">
+									<div class="form-check">
+										<?php //echo "<pre>";
+										// var_dump($data);
+										// var_dump( isset($data->is_active) && !is_null($data->is_active) && !empty($data->is_active) && $data->is_active == 'A' );die('dd'); ?>
+										<input class="form-check-input" type="checkbox" id="postactive" name="post-active" <?php echo ( ( isset($data->id) && !is_null($data->id) && !empty($data->id) ) ? (( isset($data->id) && !is_null($data->id) && !empty($data->id) && $data->is_active == 'A' ) ? "checked" : '' ) : 'checked') ?>>
+										<label class="form-check-label" for="postactive">
+											Active
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="postcontent" class="col-sm-2 col-form-label">Content</label>
+								<div class="col-sm-10">
+									<textarea class="form-control" id="postcontent" name="post-content" rows="10" <?php echo ( ( isset($data->id) && !is_null($data->id) && !empty($data->id) ) ? '' : 'placeholder="Content"') ?>><?php if ( isset($data->id) && !is_null($data->id) && !empty($data->id) ) {
+											echo trim($data->content);
+										} ?></textarea>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="posttag" class="col-sm-2 col-form-label">Tag</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="posttag" name="post-tag" <?php echo ( ( isset($data->id) && !is_null($data->id) && !empty($data->id) ) ? 'value="'. $data->tag .'"' : 'placeholder="Tag"') ?>>
+								</div>
+							</div>
+							<!-- <div class="form-group row">
+								<label for="postquantity" class="col-sm-2 col-form-label">Quantity</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="postquantity" name="post-quantity" placeholder="Quantity">
+								</div>
+							</div> -->
+						</div>
+					</form>
+				</main>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#btn-post-new").click (addPost);
+
+		function addPost() {
+			window.location.href = window.location.href+"add";
+		}
+
+		$("#btn-post-preview").click (showPreview);
+
+		function showPreview() {
+			// console.log(window);
+			var path , pathname = window.location.pathname;
+			var str = pathname.split("/");
+			console.log(str.length);
+			for (var i = 1; i <= str.length; i++) {
+				if ( str[1].toUpperCase() == "ADMINHTML" ) {
+					path = str[1] + "/" + str[2];
+				} else path = str[1];
+			}
+			console.log(window.location.origin + "/" + path + "/preview");
+			window.location.href = window.location.origin + "/" + path + "/preview";
+		}
+
+		$("#btn-post-back").click (goBack);
+
+		function goBack() {
+			// return window.history.back();
+			return window.history.go(-1);
+		}
+	</script>
+</body>
+</html>

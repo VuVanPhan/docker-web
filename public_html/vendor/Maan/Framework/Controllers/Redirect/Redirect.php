@@ -104,6 +104,34 @@
             return $this->arrayToObj( $params, $object );
         }
 
+        public function arraysSqlToObject( $params , $object = null)
+        {
+        	if (is_null( $object )) {
+        		$object = new \stdClass();
+        	} else $object = $object;
+            
+            return $this->arraySqlToObj( $params, $object );
+        }
+
+        public function arraySqlToObj( $params, $object ) 
+        {
+            if ( count( $params ) ) {
+                foreach ($params as $key => $value)
+                {
+                    if ( is_array($value) )
+                    {
+                    	$object->$key = new \stdClass();
+                        $this->arraysSqlToObject($value, $object->$key);
+                    }
+                    else
+                    {
+                        $object->$key = $value;
+                    }
+                }
+            }
+            return $object;
+        }
+
 		/**
 		 * Redirect with POST data.
 		 *

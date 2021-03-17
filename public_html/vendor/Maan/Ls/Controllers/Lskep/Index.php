@@ -1,10 +1,10 @@
 <?php
 	namespace Maan\Ls\Controllers\Lskep;
 
+	use Maan\Framework\Controllers\Redirect\Redirect as Redirect;
 	/**
 	 * 
 	 */
-	use Maan\Framework\Controllers\Redirect\Redirect as Redirect;
 	class Index extends Redirect
 	{
 		

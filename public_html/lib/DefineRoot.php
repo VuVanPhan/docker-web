@@ -31,6 +31,13 @@
 	/**
 	* The full path to the lib directory 
 	*/
+	if (!defined('PUB_PATH')) {
+	    define('PUB_PATH', ROOT.'pub'.DS); 
+	}
+
+	/**
+	* The full path to the lib directory 
+	*/
 	if (!defined('LIB_PATH')) {
 	    define('LIB_PATH', ROOT.'lib'.DS); 
 	}
@@ -118,11 +125,25 @@
 	   define('HOME_URL', (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  DS);
 	}
 
+	/**
+	* Use the ADMIN HOME_URL
+	*/
+	if (!defined('ADMIN_HOME_URL')) {
+	   define('ADMIN_HOME_URL', (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  DS . "adminhtml" . DS);
+	}
+
 	/**  
 	* Use the JS_URL
 	*/
 	if (!defined('JS_URL')) {
 	   define('JS_URL', (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  DS . "js" . DS);
+	}
+
+	/**  
+	* Use the PUB_URL
+	*/
+	if (!defined('PUB_URL')) {
+	   define('PUB_URL', (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  DS . "pub" . DS);
 	}
 
 	/**  

@@ -22,3 +22,9 @@ docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}
 
 ## Add line to vitual.apache.conf : enable rewrite apache
 LoadModule rewrite_module modules/mod_rewrite.so
+
+## Link phpmyadmin
+http://localhost:8080
+server : mariadb
+user : user1
+pass : mypassuser123

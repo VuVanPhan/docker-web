@@ -36,7 +36,7 @@ services:
     volumes:
       - './public_html:/var/www/html'
   mariadb:
-    image: 'bitnami/mariadb:10.3'
+    image: 'bitnami/mariadb'
     container_name: mariadb
     restart: 'always'
     environment:
@@ -49,13 +49,18 @@ services:
     # ports:
     #   - 3306:80
   phpmyadmin:
-    image: 'bitnami/phpmyadmin:5'
+    image: 'phpmyadmin/phpmyadmin'
     container_name: phpmyadmin
     ports:
       - 8080:80
       # - '3306:80'
     depends_on:
       - mariadb
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_PORT=3306
+      - PMA_ARBITRARY=1
+    restart: 'always'
     volumes:
       - 'phpmyadmin_data:/bitnami'
 volumes:

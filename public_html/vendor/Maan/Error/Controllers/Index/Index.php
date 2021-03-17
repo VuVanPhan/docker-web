@@ -11,7 +11,7 @@
 		}
 
 		public function execute () {
-			require_once(VENDOR_MAAN_PATH.'Error/View/Frontend/Index.php'); 
+			require_once(VENDOR_MAAN_PATH.'Error/View/templates/Frontend/Index.php'); 
 		}
 	}
 ?>
