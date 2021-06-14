@@ -138,6 +138,8 @@
 					$.ajax({
                       	type: "POST",
                       	url: delUrl,
+                      	// dataType : "json",
+                      	cache : false,
                       	data: {'id' : val},//$('#frm_message_board').serialize(),
                       	success: function (msg) {
                           	var msg = $.parseJSON(msg);

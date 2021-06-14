@@ -1,0 +1,81 @@
+<div class="container">
+	<header class="blog-header py-3">
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<div class="container d-flex flex-column flex-md-row justify-content-between">
+				<div class="col-7 d-flex justify-content-end align-items-center">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="<?php echo HOME_URL ?>" aria-label="Product">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path></svg>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="<?php echo HOME_URL."" ?>">Am thuc</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="<?php echo HOME_URL ?>">Chia se</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="<?php echo HOME_URL ?>">Kinh nghiem</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="<?php echo HOME_URL ?>">Product</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-5 d-flex justify-content-end align-items-center">
+					<form class="form-inline mt-2 mt-md-0" id="form-search-adv">
+						<input class="form-control mr-sm-2" type="text" name="key-search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" id="btn-search" type="button"><!--<a class="text-muted" href="#" aria-label="Search">-->
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+						<!--</a>-->
+						</button>
+					</form>
+					
+					<!-- <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a> -->
+					<!-- <a class="btn btn-outline-primary" href="">Sign up</a> -->
+					<script type="text/javascript">
+						$("#btn-search").click (searchForm);
+
+						function searchForm() {
+							var searchUrl = window.location.origin + "/search/index/index";
+							var dataSearch = $("#form-search-adv").serialize();
+							console.log($("form#form-search-adv"));
+							console.log(dataSearch);
+
+							$.ajax({
+		                      	type: "POST",
+		                      	url: searchUrl,
+		                      	cache : false,
+		                      	data: dataSearch,
+		                      	success: function (msg) {
+		                          	var msg = $.parseJSON(msg);
+		                          	if(msg.success)
+		                          	{
+		                          		setTimeout(function(){
+		                          			$("#spinner-loading-post").addClass("d-none");
+		           							// window.location.reload();
+		           							$("#notification-success-post").removeClass("d-none");
+		           							$("#notification-success-post").html(msg.success);
+		      							}, 1200); 
+		                         	} else {
+		                         		alert('ff45f');
+		                            	setTimeout(function(){
+		                          			$("#spinner-loading-post").addClass("d-none");
+		           							// window.location.reload();
+		           							$("#notification-danger-post").removeClass("d-none");
+		           							$("#notification-danger-post").html(msg.error);
+		      							}, 1200); 
+		                        	}
+		                       	},
+		                       	error : function (msg) {
+		                       		alert("ERROR");
+		                       	}
+		                	});
+						}
+					</script>
+				</div>
+			</div>
+		</nav>
+	</header>
+</div>

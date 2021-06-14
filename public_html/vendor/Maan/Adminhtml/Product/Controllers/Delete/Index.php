@@ -1,5 +1,5 @@
 <?php
-	namespace Maan\Adminhtml\Product\Controllers\Edit;
+	namespace Maan\Adminhtml\Product\Controllers\Delete;
 
 	/**
 	 * 
@@ -13,8 +13,9 @@
 		}
 
 		public function execute () {
+			echo "<pre>";
 			var_dump($_SERVER);
-			die('edit');
+			die('delete');
 			require_once(VENDOR_MAAN_PATH.'Adminhtml/Product/View/templates/AddProduct.phtml'); 
 		}
 	}

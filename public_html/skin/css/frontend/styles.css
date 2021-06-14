@@ -3,6 +3,10 @@ body{width: 100%;}
 #wrap-container .carousel-inner .carousel-item { height: 32rem; }
 li { text-decoration: none;list-style: none; }
 
+#wrap-container .navbar {
+  padding: 1rem 1rem;
+}
+
 .wrap-login-admin {
   display: -ms-flexbox;
   display: flex;
