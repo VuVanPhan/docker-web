@@ -18,6 +18,7 @@
 				$exp = explode( "/" , trim( $url ) );
 				// echo "<pre>";
 				// var_dump($exp);
+				// die('fff');
 				$exp_1 = $this->validate( trim( $exp[0] ) );
 				$exp_2 = $this->validate( trim( $exp[1] ) );
 				$exp_3 = $this->validate( trim( $exp[2] ) );
@@ -44,7 +45,7 @@
 
 				}
 				
-				if ( count( $params ) ) {
+				if ( count( $params ) && !is_null( $params ) ) {
 				// 	echo "<pre>";
 				// var_dump($params);
 				// die("pppppppppp");
@@ -193,12 +194,12 @@
 				}
 			}
 
-			echo "<pre>";
-			var_dump($arrExps);
-			var_dump($i);
-			var_dump($arrUris);
-			var_dump($y);
-			die(__FILE__);
+			// echo "<pre>";
+			// var_dump($arrExps);
+			// var_dump($i);
+			// var_dump($arrUris);
+			// var_dump($y);
+			// die(__FILE__);
 			if ( count($arrUris) ) {
 				$newUrl = implode("/", $arrExps);
 			}

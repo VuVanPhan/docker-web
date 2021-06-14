@@ -75,6 +75,9 @@ volumes:
 # user : root
 # pass : mypass123
 
+# user : user1
+# pass : mypassuser123
+
 ## connect mariadb with docker 
 # docker exec -it docker-sql_mariadb_1 bash
 # mysql -uroot -p

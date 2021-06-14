@@ -85,6 +85,13 @@
 	}
 
 	/**
+	* The full path to the vendor/Maan directory 
+	*/
+	if (!defined('MAAN_ADMINHTML_PATH')) {
+	    define('MAAN_ADMINHTML_PATH', VENDOR_PATH.'Maan'.DS.'Adminhtml'.DS); 
+	}
+
+	/**
 	* The full path to the vendor/Maan/Core directory 
 	*/
 	if (!defined('MAAN_CORE_PATH')) {

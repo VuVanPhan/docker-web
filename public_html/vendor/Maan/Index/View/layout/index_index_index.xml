@@ -1,0 +1,11 @@
+<page>
+	<head>
+		<title>Trang chủ Hải Trần</title>
+		<css src="Maan_Index::css/style.css" media="all"/>
+	</head>
+	<body>
+		<referenceContainer name="content">
+			<block class="Maan\Index\Block\Index" name="index_index_index" template="Maan_Index::Frontend/Index.phtml"> </block>
+		</referenceContainer>
+	</body>
+</page>

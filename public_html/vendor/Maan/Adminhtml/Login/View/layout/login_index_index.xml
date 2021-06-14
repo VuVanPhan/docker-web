@@ -1,0 +1,11 @@
+<page>
+	<head>
+		<title>Login Hải Trần</title>
+		<css src="Maan_Index::css/style.css" media="all"/>
+	</head>
+	<body>
+		<referenceContainer name="content">
+			<block class="Maan\Adminhtml\Login\Block\Index" name="login_index_index" template="Maan_Adminhtml_Login::Login.phtml"> </block>
+		</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,201 @@
+<main role="main">
+	<div class="jumbotron">
+		<div class="container">
+			<h1 class="display-3">Hello, world!</h1>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+			<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+		</div>
+	</div>
+	<div class="container-xl">
+		<div class="row">
+		<?php if ( $products ) {
+			foreach ($products as $row) { $target_dir = PUB_PATH . $row["image"]; ?>
+				<div class="col-md-3">
+					<div class="card mb-3 shadow-sm">
+						<img src="<?php echo (( file_exists($target_dir) && !is_dir($target_dir) ) ? PUB_URL.$row["image"] : PUB_URL.'post/media/images/no-image.png'); ?>" title="<?php echo $row["name"] ?>" height="200" />
+						<div class="card-body">
+							<p class="card-text"><a href="<?php echo HOME_URL."product/view/index/id/".$row["id"] ?>" title="<?php echo $row["name"] ?>"><?php echo $row["name"] ?></a></p>
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="btn-group">
+									<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+								</div>
+								<small class="text-muted">9 mins</small>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
+		<?php } ?>
+		</div>
+
+		<div class="row">
+		<?php if ( $posts ) {
+			foreach ($posts as $row) { $target_dir = PUB_PATH . $row["image"]; ?>
+				<div class="col-md-3">
+					<div class="card mb-3 shadow-sm">
+						<img src="<?php echo (( file_exists($target_dir) && !is_dir($target_dir) ) ? PUB_URL.$row["image"] : PUB_URL.'post/media/images/no-image.png'); ?>" title="<?php echo $row["name"] ?>" height="200" />
+						<div class="card-body">
+							<p class="card-text"><a href="<?php echo HOME_URL."post/view/index/id/".$row["id"] ?>" title="<?php echo $row["name"] ?>"><?php echo $row["name"] ?></a></p>
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="btn-group">
+									<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+								</div>
+								<small class="text-muted">9 mins</small>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
+		<?php } ?>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card mb-3 shadow-sm">
+					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+					<div class="card-body">
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+							</div>
+							<small class="text-muted">9 mins</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mb-3 shadow-sm">
+					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+					<div class="card-body">
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+							</div>
+							<small class="text-muted">9 mins</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mb-3 shadow-sm">
+					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+					<div class="card-body">
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+							</div>
+							<small class="text-muted">9 mins</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mb-3 shadow-sm">
+					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+					<div class="card-body">
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+							</div>
+							<small class="text-muted">9 mins</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card mb-3 shadow-sm">
+					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+					<div class="card-body">
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+							</div>
+							<small class="text-muted">9 mins</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mb-3 shadow-sm">
+					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+					<div class="card-body">
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+							</div>
+							<small class="text-muted">9 mins</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mb-3 shadow-sm">
+					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+					<div class="card-body">
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+							</div>
+							<small class="text-muted">9 mins</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card mb-3 shadow-sm">
+					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+					<div class="card-body">
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+							</div>
+							<small class="text-muted">9 mins</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr class="featurette-divider">
+		<div class="row featurette">
+			<div class="col-md-7 order-md-2">
+				<h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+				<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			</div>
+			<div class="col-md-5 order-md-1">
+				<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+			</div>
+		</div>
+		<hr class="featurette-divider">
+		<div class="row featurette">
+			<div class="col-md-7 order-md-2">
+				<h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+				<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			</div>
+			<div class="col-md-5 order-md-1">
+				<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+			</div>
+		</div>
+		<hr class="featurette-divider">
+		<div class="row featurette">
+			<div class="col-md-7 order-md-2">
+				<h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+				<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			</div>
+			<div class="col-md-5 order-md-1">
+				<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+			</div>
+		</div>
+		<hr class="featurette-divider">
+	</div>
+	
+</main>

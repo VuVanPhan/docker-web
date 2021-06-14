@@ -1,0 +1,11 @@
+<page>
+	<head>
+		<title>Edit Product quản trị Hải Trần</title>
+		<css src="Maan_Index::css/style.css" media="all"/>
+	</head>
+	<body>
+		<referenceContainer name="content">
+			<block class="Maan\Adminhtml\Product\Block\Product\Edit" name="product_add_index" template="Maan_Adminhtml_Product::AddProduct.phtml"> </block>
+		</referenceContainer>
+	</body>
+</page>

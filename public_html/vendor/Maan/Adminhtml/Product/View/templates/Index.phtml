@@ -1,6 +1,8 @@
 <?php 
+$products = $this->_product;
 // echo "<pre>";
 // var_dump($conn);
+// var_dump($products);
 // die();
 
 ?>
@@ -122,7 +124,10 @@
 									<th></th>
 								</tr>
 							</thead>
-							<?php foreach ($conn as $row) { ?>
+							
+							<?php 
+							if ($this->validata($products)) {
+							foreach ($products as $row) { ?>
 								<tbody>
 									<tr>
 										<td><?php echo $row["id"] ?></td>
@@ -130,13 +135,12 @@
 										<td><?php echo $row["sku"] ?></td>
 										<td><?php echo $row["image"] ?></td>
 										<td><?php echo $row["price"] ?></td>
-										<td><a href="">Edit</a></td>
-										<td><a href="">Delete</a></td>
+										<td><a href="<?php echo ADMIN_HOME_URL."product/edit/index/id/".$row["id"] ?>">Edit</a></td>
+										<td><a href="<?php echo ADMIN_HOME_URL."product/delete/index/id/".$row["id"] ?>">Delete</a></td>
 									</tr>
 								</tbody>
-								<?php 
-								//var_dump($row["id"]); ?>
-							<?php } ?>
+							<?php } } ?>
+							
 							<!-- <tbody>
 								<tr>
 									<td>1,001</td>
